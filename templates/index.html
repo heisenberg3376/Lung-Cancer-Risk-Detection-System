@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href='style.css' rel='stylesheet'>
+</head>
+
+<body style='background-color:black'>
+
+<h2 align='center' style='color:white;font-family:Georgia;justify-content:center;display: flex;font-size:30px'>Lung Cancer Risk Detection</h2>
+
+<div class = 'navbar' style='border:2px solid white; height:10%'>
+  
+    <a style='color:white;width:15%;margin-right:12%;font-family:monospace;font-size:22px' href='#' align=center>Home</a>
+    <a style='color:white;width:15%;margin-right:12%;font-family:monospace;font-size:22px' href='info.html' align=center>Info</a>
+    <a style='color:white;width:15%;margin-right:12%;font-family:monospace;font-size:22px' href='https://www.github.com/heisenberg3376' align=center>Github</a>
+    <a style='color:white;width:15%;font-family:monospace;font-size:22px' href='https://heisenberg3376.github.io/PhanendraPortfolio.github.io/' align=center>About me</a>
+
+</div>
+<br>
+<br>
+<form style='background-color: darkblue; color: white; text-align:center;' method="POST" action="{{url_for('predict')}}">
+  <br>
+    <label style='color: white;font-family:monospace;font-size:20px;' for='age'>Age:</label>
+    <input style='width: 150px;height:30px;' type='number' name='age'><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="">Air Pollution Level:</label>
+    <select id="ap" name="ap" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="au">Alcohol use:</label>
+    <select id="au" name="au" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select>
+    <br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="da">Dust Allergy:</label>
+    <select id="da" name="da" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="oh">OccuPational Hazards:</label>
+    <select id="oh" name="oh" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="gr">Genetic Risk:</label>
+    <select id="gr" name="gr" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="cld">Chronic Lung Disease:</label>
+    <select id="cld" name="cld" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="bd">Balanced Diet:</label>
+    <select id="bd" name="bd" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="o">Obesity:</label>
+    <select id="o" name="o" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="s">Smoking:</label>
+    <select id="s" name="s" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="ps">Passive Smoker:</label>
+    <select id="ps" name="ps" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="cp">Chest Pain:</label>
+    <select id="cp" name="cp" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="cb">Coughing of Blood:</label>
+    <select id="cb" name="cb" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="f">Fatigue:</label>
+    <select id="f" name="f" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br>
+
+    <label style='color: white;font-family:monospace;font-size:20px;' for="dc">Dry Cough:</label>
+    <select id="dc" name="dc" style='width: 150px;height:30px;'>
+      <option value=1>1</option>
+      <option value=2>2</option>
+      <option value=3>3</option>
+      <option value=4>4</option>
+      <option value=5>5</option>
+      <option value=6>6</option>
+      <option value=7>7</option>
+      <option value=8>8</option>
+    </select><br><br><br><br>
+    
+
+    <input style='width: 400px;height:60px;background-color:darkgreen;color:white;font-family:monospace;font-size:40px;cursor:pointer' value='predict' type="submit">
+
+<br>
+<br>
+<br>
+  </form>
+  <br>
+  <br>
+  <h3 align=center style='color: white;font-family:monospace;font-size:30px;'>{{prediction_text}}<h3>
+    <br>
+    <br>
+<!--<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>-->
+
+</body>
+</html>
+
