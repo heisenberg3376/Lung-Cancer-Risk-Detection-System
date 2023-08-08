@@ -38,6 +38,4 @@ def info():
 if __name__ == '__main__':
     app.run(debug=True)
 
-features2 = [x for x in request.form.values()]
-ar2 = [np.array(features2)]
-print(ar2)
+
