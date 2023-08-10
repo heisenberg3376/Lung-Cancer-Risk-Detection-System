@@ -28,9 +28,13 @@ Check out the [live demo](https://lung-cancer-risk-detection-system.streamlit.ap
 ## Dependencies
 The project relies on the following key dependencies:
 - Python (>=3.6)
-- Streamlit (>=2.0)
+- Streamlit (>=1.19)
 - XGBoost (>=1.5)
 - Pandas (>=1.3)
 - Scikit-learn (>=0.24)
+
+  
+## License
+This project is licensed under the [MIT License](LICENSE).
 
 For a complete list of dependencies, please refer to the `requirements.txt` file.
