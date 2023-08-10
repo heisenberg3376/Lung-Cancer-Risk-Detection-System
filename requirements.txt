@@ -1,6 +1,6 @@
 
 Flask==2.3.2
-
+streamlit_option_menu==0.3.6
 numpy==1.25.2
 pipreqs==0.4.13
 requests==2.31.0
